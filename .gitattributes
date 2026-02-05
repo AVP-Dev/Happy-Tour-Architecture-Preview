@@ -1,17 +1,20 @@
-# Force GitHub to detect core languages
-*.js linguist-detectable=true
-*.js linguist-language=JavaScript
-*.prisma linguist-detectable=true
+# Force detection of core logic
+/lib/**/*.js linguist-language=JavaScript
+/theme/**/*.js linguist-language=JavaScript
+/pages/**/*.js linguist-language=JavaScript
 *.prisma linguist-language=Prisma
 
-# Mark all Markdown as documentation (excludes from language bar)
-*.md linguist-documentation=true
-docs/** linguist-documentation=true
+# Mark specifically as detectable to avoid "too small" or "redacted" filters
+*.js linguist-detectable
+*.prisma linguist-detectable
 
-# Mark configuration as vendored (excludes from language bar)
-package.json linguist-vendored=true
-package-lock.json linguist-vendored=true
-jsconfig.json linguist-vendored=true
-next.config.js linguist-vendored=true
-LICENSE linguist-vendored=true
+# Exclude documentation from language statistics
+*.md linguist-documentation
+/docs/**/* linguist-documentation
 
+# Mark as vendored (completely hidden from language bar)
+package-lock.json linguist-vendored
+package.json linguist-vendored
+jsconfig.json linguist-vendored
+next.config.js linguist-vendored
+LICENSE linguist-vendored
