@@ -1,12 +1,17 @@
-# Force GitHub to detect JavaScript despite redacted logic
+# Force GitHub to detect core languages
 *.js linguist-detectable=true
 *.js linguist-language=JavaScript
-
-# Mark documentation clearly
-docs/** linguist-documentation=true
-README.md linguist-documentation=true
-README.ru.md linguist-documentation=true
-
-# Keep Prisma visible
 *.prisma linguist-detectable=true
 *.prisma linguist-language=Prisma
+
+# Mark all Markdown as documentation (excludes from language bar)
+*.md linguist-documentation=true
+docs/** linguist-documentation=true
+
+# Mark configuration as vendored (excludes from language bar)
+package.json linguist-vendored=true
+package-lock.json linguist-vendored=true
+jsconfig.json linguist-vendored=true
+next.config.js linguist-vendored=true
+LICENSE linguist-vendored=true
+
