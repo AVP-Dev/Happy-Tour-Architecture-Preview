@@ -1,0 +1,12 @@
+# Force GitHub to detect JavaScript despite redacted logic
+*.js linguist-detectable=true
+*.js linguist-language=JavaScript
+
+# Mark documentation clearly
+docs/** linguist-documentation=true
+README.md linguist-documentation=true
+README.ru.md linguist-documentation=true
+
+# Keep Prisma visible
+*.prisma linguist-detectable=true
+*.prisma linguist-language=Prisma
